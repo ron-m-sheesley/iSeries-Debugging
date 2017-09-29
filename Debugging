@@ -1,0 +1,7 @@
+
+Call rons/DBG_PR312A (x'0500600f' 'Y005 ' 'DB' '18X18 ' 'P' 'CQ' ' ' x'0000050f' 'SF' x'0021414f' x'0000000f' 'RONS      ' x'0000000f' ' ')
+
+CALL PGM(rons/dbg_rvr110) PARM(X'020141014F' X'0000003F' X'001F' X'04111F' 'Ron S-Test' 'q1w2e3r4' 'Y' '106' X'001F' '7062705313' 'CANADA')  
+
+// Debug Warehouse Override program
+rons/DBG_OPR101 (x'0504658f' x'00000f' x'0773364f' 'CQ' 'PNX' 'C' 'YY004' '881  '  '6X48  ' 'DB' 'Y004 ' '881  '  '6X48  ' 'DB' 'RESILIENT ' 'LVP       ' 'DRYBACK   ' '          ' '2' 'FL' '33634')  
