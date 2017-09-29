@@ -1,0 +1,39 @@
+// Send email from spool file
+SNDSPLMAIL FILE(          )                                
+             JOB(      /RONS/QPADEV    )                    
+             SPLNBR(1)                                      
+             TRANSFORM(*PDF)                                
+             TOSMTPNAME(('miranda.young@beaulieugroup.com'))
+              SUBJECT('                         ')          
+              MSG('                                      ') 
+             PCFILE(                )
+
+// IFS links
+WRKLNK OBJ('/home/RONS/./.././../QUADRANT/FTASTIC/IMAGE')
+
+// Restart Datagate:	Should be running in QINTER
+Beau - DG8_110/STRDG8SVR		End DataGate - DG8_110/ENDDG8SVR
+Luke - ASNA_DG8/STRDG8SVR		End DateGate - ASNA_DG8/ENDDG8SVR
+
+// Restart Web Reports:
+SBMJOB     CMD(CALL PGM(CAMS/WBC250)) JOB(WEBSLSRPT) JOBQ(QSPL) USER(WEBSALES) INLLIBL(*JOBD) LOG(4 *JOBD *SECLVL) LOGCLPGM(*YES)
+
+// Web Invoices IFS path
+/home/webpdf/		I5015232356947.pdf ( I (capital i) - customer # - invoice #
+
+// RPG program to return a User's information from USP002 (except password, security question, security answer and employee number)
+BEAU/QRPGLESRC/RTVUSP2
+
+//  Create RPG Service Program
+ CRTSRVPGM SRVPGM(CAMS/SRV050) MODULE(CAMS/SRV050) SRCFILE(CAMSSRC/QSRVSRC) SRCMBR(SRV050BND) OPTION(*DUPPROC)
+
+// To force the Initial Email to a TM from LukeDev, open browser and enter this. Can be beta.accessbeaulieu.com or www.accessbeaulieu.com if necessary.  Using localhost allows for debugging.
+// The number after .aspx/ is the submission # of the <eps_411> record for the order# in PRP110.
+// Use this SQL to get the submission # (epsid) of the <eps_411> record for the order. In the example, 6373126 is the order #.
+select epsid, epsxml, epsfindkey from cams.prp110 where epsfindkey like '6373126%' and epsxml like '<eps_411%';
+  
+http://localhost/PR/OPMEmailWS/InitialEmail.aspx/2447675
+http://beta.accessbeaulieu.com/PR/OPMEmailWS/InitialEmail.aspx/2447801
+
+// Formtastic Merge
+FTASTIC/MRGFRMSPL NAME(BIF220MS) FROMOUTQ(QUSRSYS/GMARLAN55) FORMTYPE(S_IN VOICE) SPRTF(BIF220PF) SUSRDTA(SIV2662408) USERID(RONS) JOBNAME(QPADEV0159) JOBN BR(531486) SPLNBR(*LAST) TOOUTQ(RONS/RONS) COPIES(1) COLLATE(*YES) DUPMODE(*YES)  BCKFRM(BIF220PB) DTABCK(*SAME) SMSGS(*YES) FORCE(*YES) MOVEORIG(RONS/RONS) NEWFRMTYP(S_INVOICE) HOLDMRG(*YES) SAVEMRG(*YES) DRAWER(7) USERDATA(SIV2662408) 
