@@ -5,3 +5,6 @@ CALL PGM(rons/dbg_rvr110) PARM(X'020141014F' X'0000003F' X'001F' X'04111F' 'Ron 
 
 // Debug Warehouse Override program
 rons/DBG_OPR101 (x'0504658f' x'00000f' x'0773364f' 'CQ' 'PNX' 'C' 'YY004' '881  '  '6X48  ' 'DB' 'Y004 ' '881  '  '6X48  ' 'DB' 'RESILIENT ' 'LVP       ' 'DRYBACK   ' '          ' '2' 'FL' '33634')  
+
+// Debug an RPG service program:
+call rons/testsrvpgm (x'00002942709f' 'SF' x'0021793f' 'EA')
