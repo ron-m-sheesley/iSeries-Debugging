@@ -1,0 +1,6 @@
+ // Debug a job running in batch
+ SBMJOB CMD(CALL PGM(RONS/LOOPY)) JOB(RONS_TEST)
+ 
+ STRSRVJOB JOB(057628/RONS/RONS_TEST)
+ 
+ strdbg (rons/loopy) updprod(*YES)
