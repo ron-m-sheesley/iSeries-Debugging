@@ -1,0 +1,41 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 15:31:46    BEAU         PAGE    1
+  SOURCE FILE . . . . . . .  CAMSSRC/QCMDSRC
+  MEMBER  . . . . . . . . .  CIC250WEB
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100  CIC250WEB:  CMD        PROMPT('Customer Listing by Salesman')                                                  05/28/02
+    200                                                                                                                 04/24/89
+    300              PARM       KWD(GRP#) TYPE(*DEC) LEN(2 0) DFT(*ALL) +                                               04/28/98
+    400                           SPCVAL((*ALL 00)) PROMPT('Sales Group to +                                            04/28/98
+    500                           Process')                                                                             04/28/98
+    600                                                                                                                 04/28/98
+    700              PARM       KWD(SLS#) TYPE(*DEC) LEN(3 0) DFT(*ALL) +                                               04/28/98
+    800                           SPCVAL((*ALL 000)) PROMPT('Salesman +                                                 04/28/98
+    900                           Number to Process')                                                                   04/28/98
+   1000                                                                                                                 04/28/98
+   1100              PARM       KWD(SHIP) TYPE(*CHAR) LEN(1) RSTD(*YES) +                                               04/28/98
+   1200                           DFT(N) VALUES(Y N) PROMPT('Include +                                                  04/28/98
+   1300                           Ship-tos (Y/N)')                                                                      04/28/98
+   1400                                                                                                                 04/28/98
+   1500              PARM       KWD(COPIES) TYPE(*DEC) LEN(2 0) DFT(1) +                                                03/12/98
+   1600                           RANGE(1 99) MIN(0) MAX(1) PROMPT('Number of +                                         08/11/87
+   1700                           Copies to Print')                                                                     08/11/87
+   1800              PARM       KWD(OUTQ) TYPE(*CHAR) LEN(10) DFT(QPRINT) +                                             10/15/91
+   1900                           PROMPT('Output Queue')                                                                10/15/91
+   2000  /*ADDED TODD*/                                                                                                 05/28/02
+   2100              PARM       KWD(NUM) TYPE(*CHAR) LEN(6) +                                                           05/28/02
+   2200                            PROMPT('JOB NUMBER:')                                                                05/28/02
+   2300              PARM       KWD(NAME) TYPE(*CHAR) LEN(7) +                                                          05/28/02
+   2400                            PROMPT('JOB NAME:')                                                                  05/28/02
+   2500              PARM       KWD(JOB) TYPE(*CHAR) LEN(10) +                                                          05/28/02
+   2600                            PROMPT('JOB:')                                                                       05/28/02
+   2700              PARM       KWD(MBR) TYPE(*CHAR) LEN(3) +                                                           05/28/02
+   2800                            PROMPT('JOB MEMBER:')                                                                05/28/02
+   2900              PARM       KWD(JUSER) TYPE(*CHAR) LEN(10) +                                                        05/28/02
+   3000                            PROMPT('JOB USER:')                                                                  05/28/02
+   3100              PARM       KWD(EMAL) TYPE(*CHAR) LEN(75) +                                                         04/10/07
+   3200                            PROMPT('EMAIL:')                                                                     05/28/02
+   3300              PARM       KWD(PWD) TYPE(*CHAR) LEN(10) +                                                          05/28/02
+   3400                           PROMPT('PASSWORD:')                                                                   05/28/02
+   3500              PARM       KWD(PROGRAM) TYPE(*CHAR) LEN(10) +                                                      11/04/02
+   3600                           PROMPT('PROGRAM:')                                                                    11/04/02
+                                  * * * *  E N D  O F  S O U R C E  * * * *

@@ -1,0 +1,12 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 14:52:21    ENGFLOOR     PAGE    1
+  SOURCE FILE . . . . . . .  RONS/QCMDSRC
+  MEMBER  . . . . . . . . .  CVTDATES
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100 /*                                                                            */
+    200 /* Convert from a Calendar date to a CAMS date or                             */
+    300 /*         from a CAMS date to a Calendar date.                               */
+    500 /*                                                                            */
+    600
+    700              CMD        PROMPT('Convert From/To Cal/CAMS dates')
+    800
+                                  * * * *  E N D  O F  S O U R C E  * * * *

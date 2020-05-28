@@ -1,0 +1,13 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 14:51:23    LUKEDEV      PAGE    1
+  SOURCE FILE . . . . . . .  RONS/QCMDSRC
+  MEMBER  . . . . . . . . .  BIC050SAMP
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100  BIC050SAMP: CMD        PROMPT('Test SAMP INVOICES')                                                            03/31/15
+    200                                                                                                                 05/11/89
+    201              PARM       KWD(WORKSTN) TYPE(*CHAR) LEN(10) +                                                      03/31/15
+    202                           DFT(TESTSAMP01) PROMPT('WORK STATION ID')                                             03/31/15
+    203                                                                                                                 03/31/15
+    300              PARM       KWD(PULDTE) TYPE(*CHAR) LEN(6) RSTD(*NO) +                                              03/31/15
+    400                           MIN(0) PROMPT('PULL DATE')                                                            03/31/15
+    500                                                                                                                 05/11/89
+                                  * * * *  E N D  O F  S O U R C E  * * * *

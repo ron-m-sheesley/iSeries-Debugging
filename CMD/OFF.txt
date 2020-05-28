@@ -1,0 +1,6 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 15:35:43    BEAU         PAGE    1
+  SOURCE FILE . . . . . . .  BEAU/QCMDSRC
+  MEMBER  . . . . . . . . .  OFF
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100              CMD        PROMPT('Sign Off The System')                                                           07/14/94
+                                  * * * *  E N D  O F  S O U R C E  * * * *

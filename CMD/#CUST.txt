@@ -1,0 +1,14 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 15:29:16    BEAU         PAGE    1
+  SOURCE FILE . . . . . . .  CAMSSRC/QCMDSRC
+  MEMBER  . . . . . . . . .  #CUST
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100  #CUST:      CMD        PROMPT('PROCESS CUST ARRAY')                                                            06/16/05
+    200                                                                                                                 02/18/91
+    402              PARM       KWD(CUST) TYPE(*DEC) LEN(6 0) MIN(1) MAX(10) +                                          06/17/05
+    403                           PROMPT('Customer')                                                                    06/17/05
+    404                                                                                                                 06/17/05
+    500              PARM       KWD(SOOPT) TYPE(*CHAR) LEN(1) RSTD(*YES) +                                              06/17/05
+    600                           DFT(*SELECT) SPCVAL((*SELECT S) (*OMIT O)) +                                          06/17/05
+    700                           PROMPT('*SELECT/*OMIT The Customer:')                                                 06/17/05
+    800                                                                                                                 06/17/05
+                                  * * * *  E N D  O F  S O U R C E  * * * *

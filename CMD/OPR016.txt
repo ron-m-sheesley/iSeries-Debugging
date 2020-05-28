@@ -1,0 +1,10 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 14:51:23    LUKEDEV      PAGE    1
+  SOURCE FILE . . . . . . .  RONS/QCMDSRC
+  MEMBER  . . . . . . . . .  OPR016
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100              Cmd        Prompt('Send Submission # to Web Srvc')                                                 06/08/15
+    200                                                                                                                 06/08/15
+    300              Parm       Kwd(Submission) Type(*INT4) Min(1) +                                                    06/08/15
+    400                           Prompt('Submission #')                                                                06/08/15
+    500                                                                                                                 06/08/15
+                                  * * * *  E N D  O F  S O U R C E  * * * *

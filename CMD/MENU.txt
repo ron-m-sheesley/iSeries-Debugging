@@ -1,0 +1,22 @@
+  5761WDS V7R1M0  100416                  SEU SOURCE LISTING                            10/18/19 15:35:24    BEAU         PAGE    1
+  SOURCE FILE . . . . . . .  BEAU/QCMDSRC
+  MEMBER  . . . . . . . . .  MENU
+  SEQNBR*...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+    100              CMD        PROMPT('Standard Menu Driver')
+    200
+    300  MENU:       PARM       KWD(MENU) TYPE(*NAME) LEN(10) MIN(1) +
+    400                           PROMPT('Menu Name:')
+    500
+    600  CMDENT:     PARM       KWD(CMDENT) TYPE(*CHAR) LEN(1) RSTD(*YES) +
+    700                           DFT(*YES) SPCVAL((*YES Y) (*NO N)) +
+    800                           PROMPT('Allow Command Entry Access?')
+    900
+   1000  CANCEL:     PARM       KWD(CANCEL) TYPE(*CHAR) LEN(1) RSTD(*YES) +
+   1100                           DFT(*YES) SPCVAL((*YES Y) (*NO N)) +
+   1200                           PROMPT('Allow Menu Termination?')
+   1300                                                                                                                 05/26/95
+   1400  EMAIL:      PARM       KWD(EMAIL) TYPE(*CHAR) LEN(1) RSTD(*YES) +                                              08/20/95
+   1500                           DFT(*YES) SPCVAL((*YES Y) (*NO N)) +                                                  08/20/95
+   1600                           PROMPT('Allow E-Mail Access?')                                                        08/20/95
+   1700                                                                                                                 05/26/95
+                                  * * * *  E N D  O F  S O U R C E  * * * *
