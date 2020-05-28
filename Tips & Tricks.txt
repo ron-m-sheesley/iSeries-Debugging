@@ -1,0 +1,337 @@
+
+(____()‘`;  Woof !
+/,____ /`
+\\      \\
+
+WRKLNK OBJ('/home/RONS/./.././../QUADRANT/FTASTIC/IMAGE')
+
+Macros:
+C:\Users\rsheesley\AppData\Roaming\IBM\Client Access\Emulator\private
+
+File X-ref:
+SBMJOB CMD(DSPFREF FILE(CAMS/RVP010) PGM(*ALLUSR/*ALL)) JOB(FREF_RVP10) 
+
+Restart Datagate:	Should be running in QINTER
+Beau - DG8_110/STRDG8SVR			End DataGate - DG8_110/ENDDG8SVR
+Luke - ASNA_DG8/STRDG8SVR		End DataGate - ASNA_DG8/ENDDG8SVR
+
+CheckUserAndUnsuccessfulAttempts - strPswd = dsValidUser.Tables(0).Rows(0)("U2PWD")
+DoLogin - after AuthenticateUser, populate user's fields (name, role tpye, etc.) and clear ErrorText
+
+Restart Web Reports:
+SBMJOB     CMD(CALL PGM(CAMS/WBC250)) JOB(WEBSLSRPT) JOBQ(QSPL) USER(WEBSALES) INLLIBL(*JOBD) LOG(4 *JOBD *SECLVL) LOGCLPGM(*YES)
+
+call camssamp/cnr311 ('bgls1cmm2nufp3bvwj1fiz55       ' x'1892512f' x'00f' x'0511631f' x'40634f')
+
+Make a backup copy - Copy contents of the SalesforceGoals folder from ABNEW/SL to AB_Backup/SL on the Production server.
+Move from Test to Prod - Copy contents of the SalesforceGoals folder from ABNEW/SL on the Test server to ABNEW/SL on the Production server.
+Rollback - Copy contents of the SalesforceGoals folder from AB_Backup/SL to ABNEW/SL on the Production server.
+
+  '' For debugging ONLY !!!!!
+  'theEmail = dsUserInfo.Tables(0).Rows(0)("U2EMAIL").ToString.Trim
+  'Dim theConnStr As String = My.Settings.ConnString.ToString.Substring(20,35)
+  'myQry = "Insert Into RONS.HASHTEST (HTUSER, HTIHASH, HTNHASH) Values('" & referenceNumber.ToString & "','" & theEmail & "','" & theConnStr & "')"
+  'SysBeau.Data.DB2.OleDBHelper.ExecuteNonQuery(myConnStr, CommandType.Text, myQry)
+  
+  myQry = "Insert Into RONS.HASHTEST (HTUSER, HTIHASH, HTNHASH) Values('" & company & "','" & customer.ToString & "','" & DateTime.Now.ToString & "')"
+  SysBeau.Data.DB2.OleDBHelper.ExecuteNonQuery(myConnStr, CommandType.Text, myQry)
+
+call rons/DBG_PR312A (x'0500600f' 'Y005 ' 'DB' '18X18 ' 'P' 'CQ' ' ' x'0000050f' 'SF' x'0021414f' x'0000000f' 'RONS      ' x'0000000f' ' ')
+ CALL PGM(rons/dbg_rvr110) PARM(X'020141014F' X'0000003F' X'001F' X'04111F' 'Ron S-Test' 'q1w2e3r4' 'Y' '106' X'001F' '7062705313' 'CANADA')  
+
+To copy assemblies:
+C:\windows\assembly\GAC_MSIL
+
+Web Invoices IFS path
+/home/webpdf/		I5015232356947.pdf ( I (capital i) - customer # - invoice #
+
+call camssamp/opr807 (x'012f' x'236f' 'DN' x'00001286043d' x'00000319616d' x'00002631700f' '1234567890123456789012345' x'00000000000f' x'00000062915d' x'00000828364d')     
+
+// RPG program to return a User's information from USP002 (except password, security question, security answer and employee number)
+BEAU/QRPGLESRC/RTVUSP2
+
+// Current Sunday to Saturday date range in VB and C#
+Dim Sunday As Date = today.AddDays(-Today.DayOfWeek)
+Dim frRng As String = sunday.Year & "-" & sunday.Month.ToString.PadLeft(2, "0") & "-" & sunday.Day.ToString.PadLeft(2, "0") & "-00.00.00.000000"
+Dim toRng As String = sunday.AddDays(6).Year & "-" & sunday.AddDays(6).Month.ToString.PadLeft(2, "0") & "-" & sunday.AddDays(6).Day.ToString.PadLeft(2, "0") & "-23.59.59.999999"
+
+ DateTime prevSunday = DateTime.Today.AddDays(Convert.ToInt16(DateTime.Today.DayOfWeek) * -1);
+ string frRng = prevSunday.Year + "-" + prevSunday.Month.ToString().PadLeft(2, '0') + "-" + prevSunday.Day.ToString().PadLeft(2, '0') + "-00.00.00.000000";
+ string toRng = prevSunday.AddDays(6).Year + "-" + prevSunday.AddDays(6).Month.ToString().PadLeft(2, '0') + "-" + prevSunday.AddDays(6).Day.ToString().PadLeft(2, '0') + "-23.59.59.999999";
+ 
+ // count array elements = 'B'
+ string[] backOrders = {" ", "B", "B", "Z"};
+ int counter = backOrders.Count(x => x == "B");		// counter will equal 2
+ 
+ Web services are deployed to:
+ C:\inetpub\wwwroot\PublishedServices\CommonProducts
+ 
+ Debug an RPG service program:
+ call rons/testsrvpgm (x'00002942709f' 'SF' x'0021793f' 'EA')
+ 
+ Create RPG Service Program
+ CRTSRVPGM SRVPGM(CAMS/SRV050)     
+           MODULE(CAMS/SRV050)     
+           SRCFILE(CAMSSRC/QSRVSRC)
+           SRCMBR(SRV050BND)       
+          OPTION(*DUPPROC)
+          
+  // To force the Initial Email to a TM from LukeDev, open browser and enter this. Can be beta.accessbeaulieu.com or www.accessbeaulieu.com if necessary.  Using localhost allows for debugging.
+  // The number after .aspx/ is the submission # of the <eps_411> record for the order# in PRP110.
+  // Use this SQL to get the submission # (epsid) of the <eps_411> record for the order. In the example, 6373126 is the order #.
+  select epsid, epsxml, epsfindkey from cams.prp110 where epsfindkey like '6373126%' and epsxml like '<eps_411%';
+  
+  http://localhost/PR/OPMEmailWS/InitialEmail.aspx/2447675
+  http://beta.accessbeaulieu.com/PR/OPMEmailWS/InitialEmail.aspx/2447801
+  
+  // SQL for a timestamp range
+  select * from cams.#imp002 where create_stmp >= '2015-03-18 00:00:00.000000' AND create_stmp <= '2015-03-18 23:59:59.998000';
+  
+ http://stackoverflow.com/questions/19999989/internet-explorer-11-detection-on-server-side
+ 
+ call CAMSSAMP/BIR220P ('B' '  ' '    ' x'0504928f' x'2739893f' '*IMAGEONLY' 'Y' 'Y')
+ 
+ FTASTIC/MRGFRMSPL NAME(BIF220MS) FROMOUTQ(QUSRSYS/GMARLAN55) FORMTYPE(S_IN VOICE) SPRTF(BIF220PF) SUSRDTA(SIV2662408) USERID(RONS) JOBNAME(QPADEV0159) JOBN BR(531486) SPLNBR(*LAST) TOOUTQ(RONS/RONS) COPIES(1) COLLATE(*YES) DUPMODE(*YES)  BCKFRM(BIF220PB) DTABCK(*SAME) SMSGS(*YES) FORCE(*YES) MOVEORIG(RONS/RONS) NEWFRMTYP(S_INVOICE) HOLDMRG(*YES) SAVEMRG(*YES) DRAWER(7) USERDATA(SIV2662408) 
+ 
+ select distinct (c1cmpy || ' - ' || ifnull(B0cnme, 'Name not found')) as CompanyName from cams.cip010a A left join cams.bip001 B on c1cmpy = b0cmpy where c1act='Y' ;
+ 
+ Insert Into RONS.USP003 (U3USR, U3ROLE, U3STAT, U3CRUSR, U3CRDTE, U3CRTME, U3CHUSR, U3STMP) Select U3USR, U3ROLE, U3STAT, U3CRUSR, U3CRDTE, U3CRTME, U3CHUSR, U3STMP From BEAU.USP003 Where U3USR='RONS';
+ Insert Into camssamp.cnp140 (CN4SID, CN4CID, CN4STS, CN4TX1, CN4TX2, CN4TX3, CN4TX4, CN4TX5, CN4TX6, CN4TX7, CN4TX8, CN4TX9) Select CN4SID, CN4CID, 'A', CN4TX1, CN4TX2, CN4TX3, CN4TX4, CN4TX5, CN4TX6, CN4TX7, CN4TX8, CN4TX9 From rons.cnp140 ;
+ 
+// SQL to populate SIP010EXT
+Insert Into CAMS.sip010ext (E1SGRP, E1SLS#, E1EVPID, E1SRVPID, E1DVPID, E1RLVPID, E1RLID, E1TMID, E1LSTUSR) 
+ 	Select S1GRP#, S1SLS#, 'KBIEDERMAN', 'JWASKIN', GRUSER, '', rl.SUUSER, tm.SUUSER, 'RONS' 
+ 
+ 	From CAMS.SIP010 
+ 	join cams.sip215 rl on s1RMGR=rl.suweb# 
+ 	join cams.sip215 tm on s1grp#=tm.susgrp and s1sls#=tm.susls#
+ 	join cams.gpp110 on s1grp#=grgp01 or s1grp#=grgp02 or s1grp#=grgp03 or s1grp#=grgp04 or s1grp#=grgp05 or s1grp#=grgp06 or s1grp#=grgp07 or s1grp#=grgp08 or s1grp#=grgp09 or s1grp#=grgp10 or
+ 		s1grp#=grgp11 or s1grp#=grgp12 or s1grp#=grgp13 or s1grp#=grgp14 or s1grp#=grgp15 or s1grp#=grgp16 or s1grp#=grgp17 or s1grp#=grgp18 or s1grp#=grgp19 or s1grp#=grgp20 or
+ 		s1grp#=grgp21 or s1grp#=grgp22 or s1grp#=grgp23 or s1grp#=grgp24 or s1grp#=grgp25 or s1grp#=grgp26 or s1grp#=grgp27 or s1grp#=grgp28 or s1grp#=grgp29 or s1grp#=grgp30
+ 
+	Where s1terr='TER' and s1act = 'A' ;
+	
+	
+// SQL to compare a date to a julian date
+select * from cams.OPP426 where (days(logdate) - days('1900-12-31')) > o1ojul;
+	
+// File having duplicate values
+Select c1cst# from cams.cip010a where c1csfx=0 group By c1cst# Having count(c1cst#) > 1 ;
+Select RPISTY,RPICLR,RPRSTY,RPRCLR from rons.rpp010 group By RPISTY,RPICLR,RPRSTY,RPRCLR Having count(rpisty) > 1 ;
+
+// Delete duplicate records
+DELETE from CAMS.RPP010 a 
+where rrn(a) < (
+select max(rrn(a)) from CAMS.RPP010 b 
+	where a.RPISTY = b.RPISTY and a.RPICLR = b.RPICLR and a.RPRSTY = b.RPRSTY and a.RPRCLR = b.RPRCLR )
+	
+// Count of multiple distinct fields
+Select Count(*) From (Select Distinct F2STYL, F2SIZE, F2BACK From CAMS.FIP020 ) As myCount ;
+
+// Stored Procedures on the iSeries
+SELECT * FROM qsys2.sysprocs where NOT (SPECIFIC_SCHEMA in ('QSYS','SYSIBM','SQLJ','QIWS')) order by SPECIFIC_SCHEMA, SPECIFIC_NAME ;
+
+// SQL Functions on the iSeries
+SELECT * FROM qsys2.sysfuncs where NOT (SPECIFIC_SCHEMA in ('QSYS','SYSIBM','SQLJ','QIWS')) order by SPECIFIC_SCHEMA, SPECIFIC_NAME ;
+
+// Yvonne's monthly report
+SNDSPLMAIL FILE(QPQUPRFIL)                               
+           JOB(864908/RONS/QPADEV01BH)                   
+           SPLNBR(1)                                     
+           TRANSFORM(*PDF)                               
+           TOSMTPNAME(('yvonne.coley@beaulieugroup.com'))
+           SUBJECT('January 2016 Account Info')          
+           MSG('Attached is January 2016 account info.') 
+           PCFILE(ACCTINFO_JAN2016)
+ 
+ tracert {ip addr} - tells what machine
+ 
+ // Debug a job running in batch
+ SBMJOB CMD(CALL PGM(RONS/LOOPY)) JOB(RONS_TEST)
+ STRSRVJOB JOB(057628/RONS/RONS_TEST)
+ strdbg (rons/loopy) updprod(*YES)
+ 
+ // SQL on New.System files
+ select * from "NEW.SYSTEM".BAP023;					NEW.SYSTEM must be uppercase since it's taken as a literal.
+ 
+ // Debug Warehouse Override program
+ rons/DBG_OPR101 (x'0504658f' x'00000f' x'0773364f' 'CQ' 'PNX' 'C' 'YY004' '881  '  '6X48  ' 'DB' 'Y004 ' '881  '  '6X48  ' 'DB' 'RESILIENT ' 'LVP       ' 'DRYBACK   ' '          ' '2' 'FL' '33634')  
+ 
+ // From SQL Server
+ select MAX(o1ord#) from [L2].[LukeDev].[CAMS].[OPP010]					don't really need the brackets
+ EXEC ('{CALL lukedev.cams.sp_OrderDetails(?, ?)}', '500600', 'TEST') AT L2		calling an iSeries stored procedure
+ select dbo.fnConvertProductType('T', 'US', 'CarpetTile') As MyType			calling a function
+ 
+ // Insert & Update a row when SELECTing from another file
+ Insert Into RONS.CIP010O (colA, colB, colC) Select colA, 'DS', colC  From CAMS.CIP010O Where COACTIVE='Y' and CODFTMKTS='DN';
+ 
+ // Reset Identity column in SQL Server
+ declare @max int
+ select @max=max(ProductId)from ProductMaster
+ if @max IS NUll
+   SET @max = 0
+DBCC CHECKIDENT ('ProductMaster', RESEED,@max)
+ 
+ // FTP from iseries to local 
+ // Make sure FTP server on iSeries is running (STRTCPSVR *FTP)
+  ftp myiseries
+    you will be prompted to enter a valid iSeries user and password
+  bin 
+  cd QGPL
+  lcd desktop
+  get MYSAVF.FILE  (note the .FILE extension is important.  MYSAVF is the name of your save file)
+  quit
+  
+  // Display a journal
+  DSPJRN JRN(ITE2HAJRN/HAJRNB)  FILE((BUARCAMS/ARP752)) RCVRNG(*CURCHAIN)
+  DSPJRN JRN(CAMS/CAMSJRNL) FILE((CAMS/RPP010)) RCVRNG(*CURCHAIN) ENTTYP(DR) OUTPUT(*OUTFILE) OUTFILE(RONS/RPPJRNL)
+  
+  // Update selected rows from one table to another
+  Update BUARCAMS.ARP750 t1 
+   Set (ACNUMB, ACURL) = 
+    (  Select t2.ACNUMB, t2.ACURL
+       From RONS.ARP750_BTA t2 
+      Where  t1.ACTRANS = t2.ACTRANS 
+    ) 
+Where ACTRANS Not In ('ENROLL', 'NEXT_CONTROL', 'PAYID');
+
+// Insert into one file where records are not already found
+insert into cams.isp010 (ISCMPY, ISDOC#, ISNAME, ISADR1, ISADR2, ISADR3, ISCITY, ISZIP , ISACDE, ISPHN#, ISCNT1, ISSTCD, ISCTCD, ISIJUL, ISIDTE) 
+(select bo.ISCMPY, bo.ISDOC#, bo.ISNAME, bo.ISADR1, bo.ISADR2, bo.ISADR3, bo.ISCITY, bo.ISZIP , bo.ISACDE, bo.ISPHN#, bo.ISCNT1, bo.ISSTCD, bo.ISCTCD, bo.ISIJUL, bo.ISIDTE
+from rons.isp010 bo
+left join cams.isp010 ef on bo.iscmpy= ef.iscmpy And bo.isdoc#= ef.isdoc# 
+where ef.isdoc# is null)  ;
+
+// Subselects with Unions
+Select s1cmpy, s1doc#, Sum(TaxTotal) From (   
+select s1cmpy, s1doc#, sum(s1tax) As TaxTotal from "NEW.SYSTEM".sap400 where s1ijul >= 42678 group by s1cmpy, s1doc# having Sum(S1tax) <> 0
+union All
+select s1cmpy, s1doc#, sum(s1tax) As TaxTotal from "NEW.SYSTEM".sap400t where s1ijul >= 42678 group by s1cmpy, s1doc# having Sum(S1tax) <> 0
+union All
+select s1cmpy, s1doc#, sum(s1tax) As TaxTotal from "NEW.SYSTEM".sap400s where s1ijul >= 42678 group by s1cmpy, s1doc# having Sum(S1tax) <> 0
+) taxes
+group by s1cmpy, s1doc#
+order by s1cmpy, s1doc#;
+
+//
+select * from rons.qrpgsrc ;
+update rons.qrpgsrc set srcdat=180531 where srcdat > 180515;
+
+// Save spreadsheet as csv and move to the IFS, then run this command
+CPYFRMIMPF FROMSTMF('/rons/BOC Promo.csv') TOFILE(RONS/PROMOROLLS) MBROPT(*ADD) RCDDLM(*LF) ERRRCDOPT(*REPLACE) RPLNULLVAL(*FLDDFT)
+
+// EF test menu option
+ICMD CMD(PPC375Y1) LIBL(QTEMP RONS CAMS CAMSPGM CAMSAR CAMSARPGM QGPL CAMTL CAMSCGI CAMSEDI SPOOLMAIL TLABARCODE CAMSSRC)
+
+// SQL - Get CAMS julian date
+select DAYS(CURRENT_DATE) - DAYS('1900-12-31') from sysibm.sysdummy1;
+SELECT CURRENT_DATE - 75 DAY FROM sysibm.sysdummy1;
+
+// Convert CAMS julian from a file field
+Select ORODTE, (DAYS(TIMESTAMP_FORMAT(LPAD(ORODTE,6,'0' ),'MMDDYY')) - DAYS('1900-12-31')) from cams.iopp010  Where ORODTE > 0;
+Update cams.iopp010 set orojul = (DAYS(TIMESTAMP_FORMAT(LPAD(ORODTE,6,'0' ),'MMDDYY')) - DAYS('1900-12-31')) Where ORODTE > 0;
+
+// Convert CAMS date to MDCY date
+Select Date('1900-12-31') + 43544(CAMS date goes here) Days As MyDate From Sysibm.Sysdummy1;
+
+// SQL Timestamp difference (4 = minutes, 8 = hours, 16 = days, 32 = weeks, 64 = months, etc.)
+TIMESTAMPDIFF(16, CHAR(CURRENT_TIMESTAMP - APCTIMST))
+
+// Get the name of the Day of the Week
+Select DAYNAME(CURRENT_DATE) From SysIbm.SysDummy1 ;
+
+// Get the name of the Month
+Select MONTHNAME(CURRENT_DATE) From SysIbm.SysDummy1 ;
+
+// Get the Day of the Week w/Sunday as the 1st day of the week or w/Monday as the 1st day of the week
+Select DAYOFWEEK(CURRENT_DATE) From SysIbm.SysDummy1;     // returns Monday as 2
+Select DAYOFWEEK_ISO(CURRENT_DATE) From SysIbm.SysDummy1;     	// returns Monday as 1
+
+// Get the Week # w/Sunday as the 1st day of the week or w/Monday as the 1st day of the week
+Select WEEK(CURRENT_DATE) From SysIbm.SysDummy1;
+Select WEEK_ISO(CURRENT_DATE) From SysIbm.SysDummy1;
+
+// Break by row number
+Select ROW_NUMBER() Over (PARTITION By ca.c1csfx ORDER BY C1CITY) AS RowNumber, ca.c1csfx, cm.C1cst#, cm.c1name
+FROM cams.cip010 cm
+LEFT OUTER JOIN cams.cip010a ca ON cm.C1CST# = ca.C1CST#
+where ca.c1csfx > 10
+ORDER BY ca.c1csfx;
+
+// Return RRN of file
+select rrn(cams.cip010a), c1cmpy, c1csfx from cams.cip010a where c1cst#=100915;
+select rrn(a), c1cmpy, c1csfx from cams.cip010a a where c1cst#=100915;			// Alternative using an alias
+
+// Return a file's schema
+Select * From QSYS2.SYSCOLUMNS Where TBNAME = 'FIP040' And TABLE_SCHEMA = 'CAMS';
+
+// Upsert
+Merge Into CAMSARTEST.ARP753QP As dtl
+   Using (Values ($payID, $invoice, $invSeq) ) As merge (APPID#, APDOC#, APSUB#) 
+     On dtl.APPID# = merge.APPID# And dtl.APDOC# = merge.APDOC# And dtl.APSUB# = merge.APSUB#
+   When Matched Then
+     Update Set APARCT = $arAcct, APCST# = $acct, APDTYP = '$type', APDBAL = $invTotal, APDISC = $discount, APAMT = $invBalance, APCPN$ = $couponAmt, APODTE = $invDate, APDDTE = $dueDate
+   When Not Matched Then
+     Insert (APPID#, APARCT, APCST#, APDOC#, APSUB#, APDTYP, APDBAL, APDISC, APAMT, APCPN$, APODTE, APDDTE)
+       Values($payID, $arAcct, $acct, $invoice, $invSeq, '$type', $invTotal, $discount, $invBalance, $couponAmt, $invDate, $dueDate)
+
+// Screenshot of Dropdownlist
+Open up the Snipping Tool.
+Hit the Escape button.
+Bring up the info/text you are trying to grab.
+Press Control and Print Screen at the same time.
+
+// Zend 
+http://camsnet.engineeredfloorsllc.com:10081	eng86290818
+GO MENU(ZENDSVR6/ZSMENU)			iSeries
+
+// Compile SQLRPGLE, RPGLE & DSPF program from command line
+crtsqlrpgi obj(rons/rpr010) srcfile(rons/qrpglesrc) srcmbr(*obj) objtype(*pgm) dbgview(*source)
+crtbndrpg pgm(RONS/          ) srcfile(rons/qrpglesrc) option(*NODEBUGIO *NOUNREF) dbgview(*source)
+
+CRTDSPF FILE(RONS/SMF020) SRCFILE(RONS/QDDSSRC) SRCMBR(SMF020) REPLACE(*YES)
+
+// Detail totals don't match Header total
+select p.APPID#, p.APTPAY, sum(c.APAMT) As DtlTotal
+from camsar.arp752qp p
+left join camsar.arp753qp c on p.APPID# = c.APPID#
+where APPTYP <> ''
+group by p.APPID#, p.APTPAY
+having sum(c.APAMT) <> p.aptpay
+order by p.appid# desc ;
+
+// Debug Order Valuation OPS080
+strdbg (camspgm/ops080 ) updprod(*YES)
+call camspgm/ops080 ('1' '5453479' '               ')
+
+// Using RRN in SQL
+SELECT * FROM OPP856 WHERE RRN(OPP856) = 9021
+update opp856 set o8date = 080319, o8jul = 43314 WHERE RRN(OPP856) BETWEEN 9021 AND 10829
+
+// Copy an IFS folder to new location
+CPY ?OBJ('/esdi/xl_presto_old/skins/Pacific') TODIR('/esdi/xl_presto/skins/Pacific') SUBTREE(*ALL)
+
+// CL parm converted from decimal to character to pass as decimal when submitting job
+dcl  &cAccount   *char 3 stg(*defined) defvar(&Account)
+
+// FileZilla QuickConnect servers
+C:\Users\rsheesley\AppData\Roaming\FileZilla
+
+// Update field from field in another file, if it exists
+UPDATE camstest.rsp110 SI
+ SET   spsts = (
+      SELECT  RAN . spsts
+      FROM  rons.rsp110 RAN
+      WHERE SI . SPSTYLE = RAN . SPSTYLE And SI . SPRCS = RAN . SPRCS
+       FETCH FIRST ROW ONLY ) 
+WHERE exists
+(
+SELECT * FROM rons.rsp110 RAN
+ WHERE SI . SPSTYLE = RAN . SPSTYLE And SI . SPRCS = RAN . SPRCS 
+)  ;
+
+// Compare HYF date & Timestamps
+select * from CUSMASTER where date(SMELLY100DATE+days('12/31/1899')) > 140124
+select * from CUSMASTER where date(DODGYTIMESTAMPDATE) > 140124
+
+C:\Users\rsheesley\AppData\Roaming\ILEditorData\source\10.0.151.111\RONS
