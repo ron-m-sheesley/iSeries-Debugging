@@ -345,3 +345,5 @@ Field3 = *In03 + (Pay > 100) + %eof(FileA); // Three items are evaluated as true
 
 // Eval variable larger than 1024 vbytes from within RPG debug
 Eval varName:c 1500(length of variable)
+
+select APCTIMST, APPAIDBY from camsar.arp752qp where Date(APCTIMST) In (Date('2020-12-1'), Date('2020-12-13')) And APPAIDBY = 'U' ;
