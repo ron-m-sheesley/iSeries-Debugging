@@ -335,3 +335,13 @@ select * from CUSMASTER where date(SMELLY100DATE+days('12/31/1899')) > 140124
 select * from CUSMASTER where date(DODGYTIMESTAMPDATE) > 140124
 
 C:\Users\rsheesley\AppData\Roaming\ILEditorData\source\10.0.151.111\RONS
+
+C:\Users\rsheesley\source\repos
+
+// Complex RPG assignment statements
+*In03 = F7 = F3; 		// This statement checks to see whether F7 is equal to F3. If yes, *In03 is set to *On, but if F7 is not equal to F3, *In03 is set to *Off
+*In21 = *In43 or (Pay > 100); 	// This statement sets *In21 to *On if either *In43 is *On or Pay > 100
+Field3 = *In03 + (Pay > 100) + %eof(FileA); // Three items are evaluated as true or false and then concatenated, with the result of Field3 equal to '000', '001', '010', and so on
+
+// Eval variable larger than 1024 vbytes from within RPG debug
+Eval varName:c 1500(length of variable)
